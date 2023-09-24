@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+           class Car {
+                constructor(model,color,engine,year){
+                    this.model = model;
+                    this.color = color;
+                    this.engine = engine;
+                    this.year = year
+                }
+                move(){
+                    console.log(`${this.model} is painted in ${this.color} and it was produced in the year ${this.year}`);
+                }
+                go(){
+                    alert(`This is ${this.model}`)
+                }
+           }
+
+           let car3 = new Car('Nissan','red','v8',1990)
+           let car4 = new Car('Toyota','blue','v8',2003) 
+           let car5 = new Car('Honda','green','v8', 2004)
+           console.log(car3,car4,car5);
+
+           console.log (car3,car4,car5)
+           car3.move()
+           car4.move()
+           car5.move()
+           car3.go()
+           car4.go()
+           car5.go()
+
+
+        //    class Student {
+        //         constructor(textbook,uniform,shoe,bag){
+        //             this.textbook = textbook;
+        //             this.uniform = uniform;
+        //             this.shoe = shoe;
+        //             this.bag = bag
+        //         }
+        //    }
+
+        //    let student3 = new Student('Yoruba','white','size10','big')
+        //    let student4 = new Student('English','green','size15','large') 
+        //    let student5 = new Student('Mathematics','purple','size20','midium')
+        //    console.log(student3,student4,student5);
+        </script>
+    </body>
+</html>

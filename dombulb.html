@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="disp" title="div">Hello DOM</div>
+    <p class="p"></p>
+
+    <script>document.write("Bala blu")</script>
+
+    <button onclick="change()">change</button>
+
+    <button id="myBtn">work</button>
+    <button id="mBtn">work</button>
+    
+    <script>
+        // disp.innerHTML = 'Hello World'
+
+    //    document.getElementById("disp").innerHTML = 'Hello World'
+
+    // document.getElementById("disp").innerHTML = `
+    //     <h1 title="hey" style="color: red">Hello guys</h1>
+    //     <h2>It is good to learn coding</h2>        
+    // `
+    const changeAttrib = () => {
+    document.getElementById("disp").setAttribute("title", "big div")
+    }
+
+
+    document.getElementById("myBtn").addEventListener("click", ()=>{
+            // console.log("I am working");
+            // disp.innerHTML = ("I am working")
+            disp.innerHTML = `
+        <h1 title="hey" style="color: red"><img src="images/Capture-removebg-preview.png" alt=""></h1>        
+        `
+        })
+
+        document.getElementById("mBtn").addEventListener("click", ()=>{
+            // console.log("I am working");
+            // disp.innerHTML = ("I am working")
+            disp.innerHTML = `
+        <h1 title="hey" style="color: blue"><img src="images/Capture2-removebg-preview.png" alt=""></h1>        
+        `
+        })
+
+    const change = () => {
+    document.getElementById("disp").setAttribute("title", "big big div")
+    }
+
+    </script>
+</body>
+</html>

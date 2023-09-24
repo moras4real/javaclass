@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" placeholder="Enter your score" id="userScore">
+        <button onclick="checkScore()">Check</button>
+        
+        <div id="showScore">check</div>
+        <script>
+            function checkScore () {
+                var songExcellent = new Audio("test.mp3")
+                var scoreOfUser = document.getElementById("userScore");
+                var userScored = scoreOfUser.value;
+                // alert(userScored);
+                if (userScored >= 70 && userScored <= 100) {
+                    // console.log("Excellent");
+                    // doccumet.getElementById("showScore").innerHTML
+                    // var result = "Excellent"
+                    showScore.innerHTML = "Excellent";
+                    showScore.style.color = "green";
+                    songExcellent.play();                    
+                } else if (userScored >= 60 && userScored <= 70){
+                    var songGood = new Audio("test.mp3")
+                    // console.log("Very Good");
+                    // doccumet.getElementById("showScore").innerHTML
+                    // var result = "Very Good"
+                    showScore.innerHTML = "Very Good";
+                    showScore.style.color = "green"
+                    songGood.play();
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input type="text" placeholder="Enter The Item You Want To Add" id="user">
+    <button onclick="addToCart()">Add Push To Cart</button>
+    <button onclick="firstItem()">Remove First Shift Item from Cart</button>
+    <button onclick="lastItem()">Remove Last Pop from Cart</button>    
+    <button onclick="removeItem()">Remove an item From Cart</button>
+    <button onclick="changeItem()">Change an Item in the Cart</button><br><br>
+
+    <div id="disp"></div>
+
+
+    <script>
+         var cart = []
+         function addToCart(){            
+           cart.push(user.value)
+           user.value=""
+           console.log(cart)  
+           disp.innerHTML = cart          
+        }
+
+        function firstItem(){
+            var userIndex = prompt("which first index do you want to delete?")
+            cart.shift()
+            console.log(cart)            
+        }
+
+        function lastItem(){
+            var userIndex = prompt("which last index do you want to delete?")
+            cart.pop()
+            console.log(cart)
+        }
+
+        function removeItem(){
+            var userIndex = prompt("which index do you want to delete?")
+            cart.splice(userIndex,1)
+            console.log(cart)
+        }
+
+        function changeItem(){
+            var userIndex = prompt("which index do you want to change?")
+            var replacement = prompt("what will you use to replace the item?")
+            cart.splice(userIndex,1,replacement)
+            console.log(cart)
+        }
+       
+        // var myAge =34
+        // Array is simply alist of multiple items - Shopping Cart
+        // var foods = ["Spag","Rice","Indomie","Bread","Garri"] 
+        // console.log(foods)
+        // Array Properties and Methods
+        // console.log(foods.length)        
+        // foods.push("Beans")
+        // foods.pop()
+        // foods.shift()
+        // foods.splice(startingIndex,deleteCount,replacement)
+        // foods.splice(1,2)
+        // foods.splice(3,2)
+        // foods.splice(1,1,"dodo", "chicken")
+        // console.log(foods)
+    </script>
+</body>
+</html>

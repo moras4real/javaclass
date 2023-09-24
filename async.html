@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <table id="display">
+            <tr>
+                <td></td>
+                <td></td>                
+            </tr>
+        </table>
+        <h1 id=disp></h1>
+        <button onclick="getData()">Get Data</button>
+        <button onclick="test()">test</button>
+
+        <script>
+            // synchronous
+            // asynchronous programming;            
+            // let myName = "Kunle"
+            // console.log(myName)
+            // setTimeout(() => {
+            //     myName = "Sola"
+            // },3000);            
+            // console.log(myName)
+
+            // URL - UNIFORM RESOURCE LOCATOR
+            // https://jsonplaceholder.typicode.com
+
+            // let url = "https://jsonplaceholder.typicode.com/users"
+            // let url2 = "https://api.github.com/users"
+            // const getData = async () => {                
+            //   let response = await fetch(url2)
+            //   let convertedResponse = await response.json()
+            // //   console.log(convertedResponse);           
+           
+            //     for (let index = 0; index < convertedResponse.length; index++) {
+            //         // console.log(convertedResponse[index].node_id)
+            //         display.innerHTML += `
+            //         <tr>
+            //             <td>${convertedResponse[index].login}</td>
+            //             <td>${convertedResponse[index].node_id}</td>                        
+            //         </tr> 
+            //         <img src="${convertedResponse[index].avatar_url}"/>                     
+            //         `
+            //     }
+            // }
+
+
+            const test = ()=>{
+                navigator.geolocation.getCurrentPosition((location)=>{
+                    console.log(location.coords.latitude,location.coords.longitude);
+                })
+            }
+
+
+            // .then block
+
+            // let url = "https://jsonplaceholder.typicode.com/users"
+            // const getData = ()=>{
+            //     fetch(url)
+            //     .then((response)=>{console.log(response)})
+            // }
+
+
+            // let url = "https://jsonplaceholder.typicode.com/users"
+            // const getData = ()=>{
+            //     fetch(url)
+            //     .then((response)=>response.json())
+            //     .then((convertedResponse)=>{                   
+
+            //         for (let index = 0; index < convertedResponse.length; index++) {
+            //             console.log(convertedResponse[index].name)
+                        
+            //         }
+            //     } )
+            // }
+
+
+            // let url = "https://jsonplaceholder.typicode.com/users"
+            // const getData = ()=>{
+
+            //     fetch(url)
+            //     .then((response)=>response.json())
+            //     .then((convertedResponse)=>{                   
+
+            //         for (let index = 0; index < convertedResponse.length; index++) {
+            //             console.log(convertedResponse[index].name)
+                        
+            //             disp.innerHTML += `
+            //             <h1>${convertedResponse[index].name}</h1>
+            //             `                       
+            //         }
+            //     } )
+            // }
+
+
+            let url = "https://jsonplaceholder.typicode.com/users"
+            const getData = ()=>{
+                disp.innerHTML = `<h1>loading....</h1>`
+                fetch(url)
+                .then((response)=>response.json())
+                .then((convertedResponse)=>{                   
+                    disp.innerHTML = ""
+                    for (let index = 0; index < convertedResponse.length; index++) {
+                        // console.log(convertedResponse[index].name)
+                        
+                        disp.innerHTML += `
+                        <h1>${convertedResponse[index].name}</h1>
+                        `                       
+                    }
+                } )
+                .catch((err)=>{
+                    console.log(err)
+                })
+            }
+           
+        </script>
+    </body>
+</html>                    
